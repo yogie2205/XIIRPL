@@ -1,3 +1,7 @@
+# Daftar Isi
+* [Permasalahan Perintah Compile dan Run File Java](https://github.com/yogie2205/XIIRPL#permasalahan-perintah-compile-dan-run-file-java)
+* [Permasalahan Running File Java di Netbeans: Tugas Membuat Interface ](https://github.com/yogie2205/XIIRPL#permasalahan-running-file-java-di-netbeans-tugas-membuat-interface)
+
 # Prasyarat
 
 Netbeans dan JDK versi 8.2 telah terinstal.
@@ -44,7 +48,7 @@ Tampilan *setting path* di Windows 7 sedikit berbeda. Berikut langkahnya:
 
 6. Jika masih *error*, periksa kembali versi JDK di *folder* `C:\Program Files\Java\`, lalu *edit* kembali *path*-nya.
 
-# Permasalahan Running File Java: Tugas Membuat Interface 
+# Permasalahan Running File Java di Netbeans: Tugas Membuat Interface 
 
 Ketika *run file* kendaraan.java di Netbeans tidak muncul *output*.
 
