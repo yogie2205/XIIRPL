@@ -1,19 +1,15 @@
 # Daftar Isi
+
 * [Permasalahan Perintah Compile dan Run File Java](https://github.com/yogie2205/XIIRPL#permasalahan-perintah-compile-dan-run-file-java)
-* [Permasalahan Running File Java di Netbeans: Tugas Membuat Interface ](https://github.com/yogie2205/XIIRPL#permasalahan-running-file-java-di-netbeans-tugas-membuat-interface)
-
-# Prasyarat
-
-Netbeans dan JDK versi 8.2 telah terinstal.
+* [Permasalahan Running File Java di Netbeans: Tugas Membuat Interface](https://github.com/yogie2205/XIIRPL#permasalahan-running-file-java-di-netbeans-tugas-membuat-interface)
+* [Perintah Alternatif SQL untuk FULL OUTER JOIN](https://github.com/yogie2205/XIIRPL#perintah-alternatif-sql-untuk-full-outer-join)
 
 # Permasalahan Perintah Compile dan Run File Java
 
 Perintah `javac` yang *error* di Windows memberi pesan `'javac' is not recognized as an internal...`.
 Dikarenakan perintah `javac` atau pun perintah `java` untuk *compile* dan *run file* Java belum di-*setting* di ***path*** Windows atau pun JDK belum terinstal.
 
-# Solusi
-
-*Setting path* dengan mengikuti tutorial di [link ini](https://www.duniailkom.com/tutorial-belajar-java-mengatur-setting-path-untuk-java-jdk/) untuk pengguna Windows 10.
+Maka dari itu, kita perlu *setting path* dengan mengikuti tutorial di [link ini](https://www.duniailkom.com/tutorial-belajar-java-mengatur-setting-path-untuk-java-jdk/) untuk pengguna Windows 10.
 
 Untuk pengguna Windows 7, silakan mengikuti langkah selanjutnya di bawah.
 
@@ -24,8 +20,6 @@ Jika *folder* misal bernama `jdk1.8.0_271`, maka sesuaikan dan *edit path* seper
 ![Set Path JDK](https://raw.githubusercontent.com/yogie2205/XIIRPL/main/img/java_path/4.png)
 
 Kemudian tes perintah `javac` di CMD untuk *compile file* Java. Jika masih *error*, coba cek kembali di *setting path*-nya. Bisa jadi karena versinya.
-
-# Solusi untuk Windows 7
 
 Tampilan *setting path* di Windows 7 sedikit berbeda. Berikut langkahnya:
 1. *Search* di *menu* dengan mengetikkan `environment` lalu klik pilihan `Edit the system environment variables`.
@@ -51,8 +45,7 @@ Tampilan *setting path* di Windows 7 sedikit berbeda. Berikut langkahnya:
 # Permasalahan Running File Java di Netbeans: Tugas Membuat Interface 
 
 Ketika *run file* kendaraan.java di Netbeans tidak muncul *output*.
-
-# Solusi
+Maka dari itu, ikutilah langkah berikut:
 
 1. Klik kanan pada *project* Java seperti gambar di bawah lalu klik `Properties`.
 
@@ -66,3 +59,16 @@ Ketika *run file* kendaraan.java di Netbeans tidak muncul *output*.
 
 4. Kemudian *Run* kembali *project* Java seperti biasa.
 ![Run Java Project](https://raw.githubusercontent.com/yogie2205/XIIRPL/main/img/run_java_class/4.png)
+
+# Perintah Alternatif SQL untuk FULL OUTER JOIN
+
+MySQL **tidak** ***support*** perintah `FULL OUTER JOIN` karena perintah ini hanya berlaku untuk Microsoft SQL Server.
+Maka dari itu, alternatifnya yaitu perintah `UNION` untuk menggabungkan `LEFT OUTER JOIN` dan `RIGHT OUTER JOIN` yang 'tingkah lakunya' sama seperti `FULL OUTER JOIN`. Berikut contoh perintah `UNION`:
+
+```sql
+SELECT * FROM t1 LEFT OUTER JOIN t2 ON t1.id = t2.id
+UNION
+SELECT * FROM t1 RIGHT OUTER JOIN t2 ON t1.id = t2.id;
+```
+
+Referensi lebih lanjut dapat melihat caranya di [link ini](https://stackoverflow.com/questions/4796872/how-can-i-do-a-full-outer-join-in-mysql#:~:text=However%2C%20as%20Pablo%20Santa%20Cruz%20pointed%20out%2C%20MySQL%20doesn%27t%20support%20this.%20We%20can%20emulate%20it%20by%20doing%20a%20UNION%20of%20a%20left%20join%20and%20a%20right%20join%2C%20like%20this%3A).
