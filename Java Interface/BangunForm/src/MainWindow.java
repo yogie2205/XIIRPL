@@ -8,8 +8,10 @@
  *
  * @author Wahyu
  */
+import BangunLib.*;
+import javax.swing.JOptionPane;
 public class MainWindow extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form MainWindow
      */
@@ -69,6 +71,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         btnHitung1.setText("Hitung");
+        btnHitung1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHitung1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Luas");
 
@@ -220,6 +227,36 @@ public class MainWindow extends javax.swing.JFrame {
             txtKedua2.setVisible(false);
         }
     }//GEN-LAST:event_cmbBangunRuangItemStateChanged
+ 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+      float a = 0;
+      float b = 0;
+    }
+    
+    private void btnHitung1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitung1ActionPerformed
+          float a = 0;
+        float b = 0;
+        try {
+            a = Float.parseFloat(txtPertama1.getText());
+            b = Float.parseFloat(txtKedua1.getText());
+            
+            if (cmbbangunDatar.getSelectedItem().toString().equals("Persegi")) {
+                Persegi persegi = new Persegi(a, b);
+                txtLuas1.setText(""+persegi.luas());
+                txtKeliling.setText(""+persegi.keliling());
+            } else if (cmbbangunDatar.getSelectedItem().toString().equals("Lingkaran")) {
+                Lingkaran lingkaran = new Lingkaran(a);
+                txtLuas1.setText(""+lingkaran.luas());
+                txtKeliling.setText(""+lingkaran.keliling());
+            } else if (cmbbangunDatar.getSelectedItem().toString().equals("Segitiga")) {
+                Segitiga segitiga = new Segitiga(a, b);
+                txtLuas1.setText(""+segitiga.luas());
+                txtKeliling.setText(""+segitiga.keliling());
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this,"Sorry ada yang salah", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnHitung1ActionPerformed
 
     /**
      * @param args the command line arguments
