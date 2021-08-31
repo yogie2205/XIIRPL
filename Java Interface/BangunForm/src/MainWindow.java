@@ -141,6 +141,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         btnHitung2.setText("Hitung");
+        btnHitung2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHitung2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Luas");
 
@@ -227,14 +232,9 @@ public class MainWindow extends javax.swing.JFrame {
             txtKedua2.setVisible(false);
         }
     }//GEN-LAST:event_cmbBangunRuangItemStateChanged
- 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-      float a = 0;
-      float b = 0;
-    }
     
     private void btnHitung1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitung1ActionPerformed
-          float a = 0;
+        float a = 0;
         float b = 0;
         try {
             a = Float.parseFloat(txtPertama1.getText());
@@ -257,6 +257,34 @@ public class MainWindow extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Sorry ada yang salah", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnHitung1ActionPerformed
+
+    private void btnHitung2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitung2ActionPerformed
+         float a = 0;
+      float b = 0;
+      
+      try {
+          a = Float.parseFloat(txtPertama2.getText());
+          
+          if (cmbBangunRuang.getSelectedItem().toString().equals("Bola")) {
+              Bola bola = new Bola(a);
+              txtLuas2.setText(""+bola.luas());
+              txtVolume.setText(""+bola.volume());
+          }
+          else if (cmbBangunRuang.getSelectedItem().toString().equals("Kubus")) {
+              Kubus kubus = new Kubus(a);
+              txtLuas2.setText(""+kubus.luas());
+              txtVolume.setText(""+kubus.volume());
+          }
+          else if (cmbBangunRuang.getSelectedItem().equals("Tabung")) {
+              b = Float.parseFloat(txtKedua2.getText());
+              Tabung tabung = new Tabung(a, b);
+              txtLuas2.setText(""+tabung.luas());
+              txtVolume.setText(""+tabung.volume());
+          }
+      } catch (NumberFormatException ex) {
+          JOptionPane.showMessageDialog(this, "Maaf, anda salah input", "error", JOptionPane.ERROR_MESSAGE);
+      }
+    }//GEN-LAST:event_btnHitung2ActionPerformed
 
     /**
      * @param args the command line arguments
